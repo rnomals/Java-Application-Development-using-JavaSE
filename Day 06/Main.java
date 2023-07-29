@@ -50,9 +50,12 @@ public class Main {
             } else if(option == 5){
                 library.displayAllBooks();
             }else if(option == 6){
+                library.displayAllMembers();
+            }else if(option == 7){
                 System.out.println("Exiting....");
                 isRunning = false;
-            }else{
+            }
+            else{
                 System.out.println("Wrong option.");
             }
         }
@@ -67,7 +70,8 @@ public class Main {
         System.out.println("3: Lend a Book");
         System.out.println("4: Return a Book");
         System.out.println("5: Display All Books");
-        System.out.println("6: Exit the Program");
+        System.out.println("6: Display All Members");
+        System.out.println("7: Exit the Program");
         System.out.println("-------------------------------------");
     }
 

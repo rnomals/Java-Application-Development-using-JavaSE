@@ -19,7 +19,7 @@ public class Library {
     }
 
     public void addMember(String memberID,String name, String address, String phoneNumber){
-        Member newMember = new Member(null, null, null, null);
+        Member newMember = new Member(memberID, name, address, phoneNumber);
         members.add(newMember);
         System.out.println("Member added Succesfully!");
     }
@@ -48,7 +48,7 @@ public class Library {
 
         if(books.size() > 0){
             for(int i = 0; i < books.size(); i++){
-                if(books.get(i).getISBN() == ISBN) return i;
+                if(books.get(i).getISBN().equals(ISBN)) return i;
             }
         }
         return -999;
@@ -57,7 +57,7 @@ public class Library {
     private int searchMember(String memberID){
         if(members.size() > 0){
             for(int i = 0; i < members.size(); i++){
-                if(members.get(i).getMemberId() == memberID) return i;
+                if(members.get(i).getMemberId().equals(memberID)) return i;
             }
         }
         return -999;
@@ -66,7 +66,7 @@ public class Library {
     private int searchBorrowedBook(String ISBN){
         if(borrowedInfos.size() > 0){
             for(int i = 0; i < borrowedInfos.size(); i++){
-                if(borrowedInfos.get(i).getBookInfo().getISBN() == ISBN){
+                if(borrowedInfos.get(i).getBookInfo().getISBN().equals(ISBN)){
                     return i;
                 }
             }
@@ -77,6 +77,13 @@ public class Library {
     public void displayAllBooks(){
         for (Book book : books) {
             book.displayBookInfo();
+            System.out.println();
+        }
+    }
+
+    public void displayAllMembers(){
+        for(Member member: members){
+            member.displayMemberInfo();
             System.out.println();
         }
     }
