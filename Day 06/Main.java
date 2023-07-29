@@ -10,6 +10,7 @@ public class Main {
             printInstruction();
             System.out.print("Select the option: ");
             int option = scanner.nextInt();
+            scanner.nextLine();
 
             if(option == 1){
                 System.out.println("Adding a new book:");
